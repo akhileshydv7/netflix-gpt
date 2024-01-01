@@ -61,7 +61,6 @@ const Login = () => {
             signInWithEmailAndPassword(auth, email.current.value, password.current.value)
                 .then((userCredential) => {
                     // const user = userCredential.user;
-                    navigate("/browse");
                 })
                 .catch((error) => {
                     // const errorCode = error.code;
