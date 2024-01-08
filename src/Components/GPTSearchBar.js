@@ -18,7 +18,6 @@ const GPTSearchBar = () => {
     }
 
     const handleGPTSearchClick = async () => {
-        // console.log(searchText.current.value);
         const gtpQuery = "Act as a Movie Recommendation system and suggest some movie for the query : " + searchText.current.value + ". Only gives me names of 5 movies, comma seperated like the example result given ahead. Example Result: Chup Chup Ke, Andhadhun, Don, Dhoom, Bhool Bhulaiyaa";
 
         const gptResults = await openai.chat.completions.create({
@@ -30,13 +29,11 @@ const GPTSearchBar = () => {
             <h1>oops</h1>
         }
 
-        console.log(gptResults.choices);
         const gtpMovies = gptResults?.choices?.[0].message?.content.split(",");
 
         const promiseArray = gtpMovies.map((movie) => searchMovieTMDB(movie));
         const tmbdResults = await Promise.all(promiseArray);
 
-        console.log(tmbdResults);
         dispatch(
             addGptMoviesResults({ movieNames: gtpMovies, movieResults: tmbdResults })
         );

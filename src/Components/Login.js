@@ -26,7 +26,6 @@ const Login = () => {
     const handleButtonClick = () => {
         const message = checkValidateData(email.current.value, password.current.value);
         setValidateMessage(message);
-        // console.log(message);
         if (message) return;
 
         if (!staySignIn) {
@@ -48,13 +47,12 @@ const Login = () => {
 
                     });
 
-                    // console.log(user);
                     navigate("/browse");
                 })
                 .catch((error) => {
                     // const errorCode = error.code;
                     // const errorMessage = error.message;
-                    // console.log(errorCode + "-" + errorMessage);
+                    // (errorCode + "-" + errorMessage);
                 });
         } else {
             // Signed in 
@@ -65,7 +63,6 @@ const Login = () => {
                 .catch((error) => {
                     // const errorCode = error.code;
                     // const errorMessage = error.message;
-                    // console.log(errorMessage);
                     setValidateMessage("Invalid Email/Password");
                 });
         }
