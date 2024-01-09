@@ -126,10 +126,6 @@ const Login = () => {
                         {staySignIn ? " Sign In" : " Sign Up"} now.
                     </span>
                 </p>
-                {/* <p
-                    className='my-4 mx-1 text-sm'>
-                    This page is protected by Google reCAPTCHA to ensure you're not a bot.
-                </p> */}
             </form>
         </div>
     )
